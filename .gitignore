@@ -188,5 +188,9 @@ fabric.properties
 debugging
 debugging/*
 
+# Files that are automatically generated from the install.py script.
+blender_script.py
+main.py
+
 # Duplicated blender files
 *.blend1
