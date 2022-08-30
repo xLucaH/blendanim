@@ -160,15 +160,7 @@ If you have improvements/extensions for the code base, feel free to fork the rep
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact
 
 I have no contact email or website at the moment.
-
-Project Link: [https://github.com/xLucaH/blendanim](https://github.com/xLucaH/blendanim)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
