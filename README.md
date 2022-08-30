@@ -48,11 +48,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -69,7 +67,7 @@ heavy lifting for animating in Blender for you (and for me).
 
 ### Built With
 
-* Python 3.9
+* [Python 3.9](https://www.python.org/downloads/)
 * [Blender 3.0](https://www.blender.org/download/releases/3-0/)
 
 
