@@ -83,39 +83,12 @@ that executes blender.
 
 ### Installation
 
-1. Download the repository and move the [src](src) directory in to your desired folder.
-2. At the top of your folder, create a `main.py` file from where we will start our blender subprocess with a custom script file.
-Create a `blender_script.py` file as well.    
-    
-    Use the following code snippet for the `main.py` file and edit the subprocess_cmnds list according to your file system structure:  
-    ```python
-    import subprocess
-    
-    subprocess_cmnds = ['/path/to/blender/exe', '-d', '--python',
-                        '/path/to/custom/script/blender_script.py', '--', '/path/to/project/folder/']
-    subprocess.call(subprocess_cmnds)
-    ```
-    
-    Use the following code snippet for the `blender_script.py` file:  
-    ```python
-    import sys
-    # We need to append the working dir to the PYTHONPATH for blender to look inside our project's source folder
-    working_dir = sys.argv[-2]
-    sys.path.append(working_dir)
-    
-    from src import entities, animation
-    
-    def test_animation():
-        cube = entities.Cube(width=2, height=2)
-        animate = animation.Animate(cube)
-    
-        animate.scale("x", 2, start=0, end=1000)
-
-    test_animation()
-    ```
-3. Now, execute the `main.py` file.
-This should open Blender with our `blender_script.py` script and execute it.
-If you start the animation via the keyframe editor, our cube will start to scale double in size for 1 second.
+1. Download the repository into your desired folder.
+2. Run the included [install.py](install.py) script and follow it's instructions.
+3. The script created two files for you `main.py` and `blender_script.py`.  
+`main.py` is the script that will run blender with an attached custom script, the `blender_script.py` script, in a subprocess.
+The `blender_script.py` is a test script to see if all the imports from the package and it's functionalities are working as expected.
+You should see a cube that will be scaled on it's x axis when you run the animation from the keyframe editor.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -179,12 +152,13 @@ animate.rotate("y", 180, start=1200, end=2000)
 ## Contributing
 
 Since this is my first Open Source Project, any kind of feedback on documentation, usability, project structure etc. is highly appreciated!
+Just post an issue with your feedback and I will respond to that as soon as possible.
 
-If you have a suggestion that would make this project better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+If you have improvements/extensions for the code base, feel free to fork the repository and create a pull request :)
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,60 +167,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+I have no contact email or website at the moment.
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+Project Link: [https://github.com/xLucaH/blendanim](https://github.com/xLucaH/blendanim)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 

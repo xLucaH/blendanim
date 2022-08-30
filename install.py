@@ -1,5 +1,5 @@
 """
-This script automatically creates all needed code and files to run a script using this animation package within
+This script automatically creates the needed code and files to run a script using this animation package within
 blender.
 """
 
