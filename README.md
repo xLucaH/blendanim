@@ -169,6 +169,24 @@ animate.location("z", 5, start=1000, end=1200)
 animate.rotate("y", 180, start=1200, end=2000)
 ```
 
+### Use 3D Files
+
+This code shows how to use a 3D file for animating by importing it from a file path.
+> Make sure to replace the ImportShape argument with your 3d file path.
+
+```python
+from blendanim import Animate, ImportShape
+
+file = ImportShape("your_3d_file.stl")
+animate = Animate(file)
+
+animate.location("x", 15, start=0, end=2000)
+animate.rotate("z", 35, start=800, end=3000)
+
+animate.location("x", 35, start=2000, end=3000)
+animate.location("y", 5, start=2000, end=3000)
+```
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
