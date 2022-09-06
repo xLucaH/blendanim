@@ -37,10 +37,10 @@ def create_files(blender_exe_path: str, working_dir: str):
     print(working_dir)
     sys.path.append(working_dir)
     
-    from src import entities, animation
+    from blendanim import Animate, Cube
     
-    cube = entities.Cube(width=2, height=2)
-    animate = animation.Animate(cube)
+    cube = Cube(width=2, height=2)
+    animate = Animate(cube)
 
     animate.scale("x", 2, start=0, end=1000)
     """[1:]  # removing the first line break.
