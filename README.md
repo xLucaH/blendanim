@@ -80,6 +80,29 @@ This way, I can easily use an external IDE for writing the code and test it imme
 that executes blender.
 
 ### Installation
+There are two ways to install this package.
+
+#### Option 1 (blender internal script)
+Copy the package folder **blendanim** in `scripts/modules` of your blender installation.
+  
+    
+The Blender `scripts` folder is defined in Blender preferences, see: [Blender File Paths settings](https://docs.blender.org/manual/en/latest/editors/preferences/file_paths.html).
+
+> Note that **blendanim** is a python module, not an Blender addon.
+
+After the install, the Blender scripts hierarchy should look like:
+```
+.../scripts/
+       modules/
+           blendanim/
+               animation/
+               entities/
+               ...
+```
+
+#### Option 2 (Scripting with an IDE)
+This option creates an easy to use scripting setup with an external blender script that get's attached to a blender
+subprocess call to allow working in your favorite IDE, instead of the blender internal ones.
 
 1. Download the repository into your desired folder.
 2. Run the included [install.py](install.py) script and follow it's instructions.
@@ -96,10 +119,10 @@ This section shows some examples on how to use the package for writing a blender
 #### Rotate object
 This code creates and rotates a cube infinitely on it's x axis. 
 ```python
-from src import entities, animation
+from blendanim import Cube, Animate
 
-cube = entities.Cube(width=2, height=2)
-animate = animation.Animate(cube) 
+cube = Cube(width=2, height=2)
+animate = Animate(cube) 
 animate.extrapolation = 'LINEAR'
 
 animate.rotate('x', value=1, start=0, end=0)
@@ -110,10 +133,10 @@ animate.rotate('x', value=90, start=0, end=400)
 This code creates and scales a cube by the value 2, on it's x axis for 1 second.
 
 ```python
-from src import entities, animation
+from blendanim import Animate, Cube
 
-cube = entities.Cube(width=2, height=2)
-animate = animation.Animate(cube)
+cube = Cube(width=2, height=2)
+animate = Animate(cube)
 
 animate.scale("x", 2, start=0, end=1000)
 ```
@@ -123,10 +146,10 @@ This code creates and moves a cube, on the x axis, 5 blender units in the positi
 original position. 
 
 ```python
-from src import entities, animation
+from blendanim import Animate, Cube
 
-cube = entities.Cube(width=2, height=2)
-animate = animation.Animate(cube)
+cube = Cube(width=2, height=2)
+animate = Animate(cube)
 
 animate.location("x", 5, start=0, end=500)
 animate.location("x", 0, start=500, end=1000)
@@ -135,10 +158,10 @@ animate.location("x", 0, start=500, end=1000)
 
 This code shows how to chain different manipulations of the object to create cool, fluent animations that stack up.
 ```python
-from src import entities, animation
+from blendanim import Animate, Cube
 
-cube = entities.Cube(width=2, height=2)
-animate = animation.Animate(cube)
+cube = Cube(width=2, height=2)
+animate = Animate(cube)
 
 animate.location("x", 5, start=0, end=500)
 animate.scale("xyz", 2, start=500, end=1000)

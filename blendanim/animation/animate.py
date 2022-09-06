@@ -3,8 +3,8 @@ import math
 import uuid
 
 import bpy
-from src.entities import AbstractBaseShape
-from src.animation.structs import *
+from blendanim.entities import AbstractBaseShape
+from blendanim.animation.structs import *
 
 DURATION_TIME_TYPE = 1000  # Milliseconds
 
